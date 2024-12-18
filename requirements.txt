@@ -1,0 +1,8 @@
+langchain
+jupyter
+langchain-openai
+langchain-community
+langgraph
+arxiv
+python-dotenv
+langchain_groq

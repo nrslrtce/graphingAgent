@@ -1,8 +1,12 @@
 langchain
-jupyter
+notebook
 langchain-openai
 langchain-community
 langgraph
 arxiv
 python-dotenv
 langchain_groq
+pypdf
+chromadb
+faiss-cpu
+transformers

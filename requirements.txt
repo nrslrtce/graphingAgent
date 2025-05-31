@@ -10,3 +10,4 @@ pypdf
 chromadb
 faiss-cpu
 transformers
+streamlit

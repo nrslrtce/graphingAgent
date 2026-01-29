@@ -3,11 +3,11 @@ from dotenv import load_dotenv
 import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import WebBaseLoader
-from langchain.embeddings import OllamaEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_classic.chains.retrieval import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 
 load_dotenv ()
@@ -23,7 +23,7 @@ if 'vector' not in st.session_state:
     st.session_state.database = FAISS.from_documents (st.session_state.final_document, st.session_state.embeddings)
 
 st.title ('Generic GROQ Trial')
-llm = ChatGroq (groq_api_key=groq_api_key, model='llama3-8b-8192')
+llm = ChatGroq (groq_api_key=groq_api_key, model='llama-3.1-8b-instant')
 
 prompt = ChatPromptTemplate.from_template (
     '''

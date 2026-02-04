@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains.retrieval import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 import time
@@ -19,7 +19,7 @@ st.title ('LLAMA3 with GROQ')
 
 llm = ChatGroq (
     groq_api_key = groq_api_key,
-    model = 'llama3-8b-8192'
+    model = 'llama-3.1-8b-instant'
 )
 
 prompt = ChatPromptTemplate.from_template (
